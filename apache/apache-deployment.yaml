@@ -1,20 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
-  namespace: web
+  name: apache
 spec:
   selector:
     matchLabels:
-      app: nginx
+      app: apache
   template:
     metadata:
       labels:
-        app: nginx
+        app: apache
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+      - name: apache
+        image: httpd:latest
         resources:
           limits:
             memory: "128Mi"
